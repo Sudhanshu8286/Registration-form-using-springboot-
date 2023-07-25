@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>index</title>
+
+<!--   <link th:href="@{/css/styles.css}" rel="stylesheet" /> -->
+
+<style>
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+</style>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body class="index-style">
+	<div th:include="@{/navbar.html}"></div>
+	<h3 class="center">Teachers details</h3>
+	<!--<form style="margin: 10px" class="d-flex" th:object="${search}" method="post" th:action="@{/search}">
+		<input class="form-control me-2" type="search" placeholder="Search"
+			aria-label="Search" th:field="*{searchString}">
+		<button class="btn btn-outline-success" type="submit">Search</button>-->
+	</form>
+	<table class="table" border=2>
+		<tr class="table-warning">
+			<th>ID</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Mobile</th>
+			<th>Passcode</th>
+			<!--<th>Update</th>
+			<th>Delete</th>-->
+		</tr>
+		<tr th:each="teacher : ${teachers}">
+			<td th:text="${teacher.id}">ABC</td>
+			<td th:text="${teacher.name}">DEF</td>
+			<td th:text="${teacher.email}">GHI</td>
+			<td th:text="${teacher.mobile}">GHI</td>
+			<td th:text="${teacher.passcode}">GHI</td>
+			<!--<td><a th:href="@{/update/{id} (id=${teacher.id})}"><button
+						class="btn btn-primary">Update</button></a></td>
+			<td><a th:href="@{/delete/{id} (id=${teacher.id})}"><button
+						class="btn btn-danger">Delete</button></a></td>-->
+		</tr>
+	</table>
+
+<!--	<button th:onClick="getAlert()">Click me</button> -->
+
+<!-- 	<script th:src="@{/js/scripts.js}"></script> -->
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
